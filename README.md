@@ -1,4 +1,4 @@
-## Seoul Density Map
+# Seoul Density Map
 
 
 **서울의 인구 혼잡도를 보여주는 지도**
