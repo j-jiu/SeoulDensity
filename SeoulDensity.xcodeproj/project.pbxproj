@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BBDA48162C214D6E0084604A /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA48152C214D6E0084604A /* CustomAnnotation.swift */; };
 		BBDA481A2C2156C00084604A /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA48192C2156C00084604A /* LegendView.swift */; };
+		BBDFA5022C21CD38001CCE53 /* GeocodingAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDFA5012C21CD38001CCE53 /* GeocodingAPIClient.swift */; };
 		BBEEB3AE2C1D91B5005771C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBEEB3AD2C1D91B5005771C2 /* Assets.xcassets */; };
 		BBEEB3B12C1D91B5005771C2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BBEEB3B02C1D91B5005771C2 /* Base */; };
 		BBEEB3B92C1D92F0005771C2 /* SeoulCityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEEB3B82C1D92F0005771C2 /* SeoulCityData.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		BBDA48152C214D6E0084604A /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		BBDA48192C2156C00084604A /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
+		BBDFA5012C21CD38001CCE53 /* GeocodingAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingAPIClient.swift; sourceTree = "<group>"; };
 		BBEEB3A12C1D91B4005771C2 /* SeoulDensity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeoulDensity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBEEB3AD2C1D91B5005771C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBEEB3B02C1D91B5005771C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				BBEEB3C42C1EF935005771C2 /* XMLParserManager.swift */,
 				BBDA48152C214D6E0084604A /* CustomAnnotation.swift */,
 				BBDA48192C2156C00084604A /* LegendView.swift */,
+				BBDFA5012C21CD38001CCE53 /* GeocodingAPIClient.swift */,
 			);
 			path = SeoulDensity;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			files = (
 				BBEEB3C12C1D94F9005771C2 /* MapView.swift in Sources */,
 				BBEEB3C32C1EF705005771C2 /* SeoulDensityApp.swift in Sources */,
+				BBDFA5022C21CD38001CCE53 /* GeocodingAPIClient.swift in Sources */,
 				BBEEB3B92C1D92F0005771C2 /* SeoulCityData.swift in Sources */,
 				BBEEB3BF2C1D9373005771C2 /* ContentView.swift in Sources */,
 				BBEEB3C52C1EF935005771C2 /* XMLParserManager.swift in Sources */,

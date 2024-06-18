@@ -9,8 +9,8 @@ struct SeoulCityData {
     let areaPopulationMax: Int
     let malePopulationRate: Double
     let femalePopulationRate: Double
-    let latitude: Double
-    let longitude: Double
+    var latitude: Double
+    var longitude: Double
     var forecastData: [ForecastData]
     var pinColor: UIColor {
         switch areaCongestLevel {

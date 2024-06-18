@@ -32,3 +32,4 @@ struct LegendView_Previews: PreviewProvider {
         LegendView()
     }
 }
+

@@ -8,56 +8,74 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            ZStack(alignment: .topLeading) {
-                MapView(seoulCityData: seoulCityData)
-                    .frame(height: 400)
-                    .padding()
-                LegendView()
-                    .padding()
-            }
-            
-            if seoulCityData.isEmpty {
-                Text("로딩 중...")
-                    .padding()
+                ZStack(alignment: .topLeading) {
+                    MapView(seoulCityData: seoulCityData)
+                        .frame(height: 400)
+                        .padding()
+                    LegendView()
+                        .padding()
+                }
+                
+                if seoulCityData.isEmpty {
+                    Text("로딩 중...")
+                        .padding()
+                        .onAppear {
+                            fetchData()
+                        }
+                } else {
+                    List(seoulCityData, id: \.id) { data in
+                        VStack(alignment: .leading) {
+                            Text("지역 이름: \(data.areaName)")
+                            //Text("지역 코드: \(data.areaCode)")
+                            Text("혼잡도 수준: \(data.areaCongestLevel)")
+                            Text("혼잡도 메시지: \(data.areaCongestMessage)")
+                            Text("최소 인구: \(data.areaPopulationMin)")
+                            Text("최대 인구: \(data.areaPopulationMax)")
+                            Text("남성 인구 비율: \(data.malePopulationRate)")
+                            Text("여성 인구 비율: \(data.femalePopulationRate)")
+                        }
+                        .padding()
+                    }
                     .onAppear {
                         fetchData()
                     }
-            } else {
-                List(seoulCityData, id: \.id) { data in
-                    VStack(alignment: .leading) {
-                        Text("지역 이름: \(data.areaName)")
-                        Text("지역 코드: \(data.areaCode)")
-                        Text("혼잡도 수준: \(data.areaCongestLevel)")
-                        Text("혼잡도 메시지: \(data.areaCongestMessage)")
-                        Text("최소 인구: \(data.areaPopulationMin)")
-                        Text("최대 인구: \(data.areaPopulationMax)")
-                        Text("남성 인구 비율: \(data.malePopulationRate)")
-                        Text("여성 인구 비율: \(data.femalePopulationRate)")
+                }
+            }
+        }
+        
+        private func fetchData() {
+            let group = DispatchGroup()
+            var cityDataList: [SeoulCityData] = []
+            
+            for location in selectedLocations {
+                group.enter()
+                GeocodingAPIClient.shared.geocode(address: location) { coordinate in
+                    guard let coordinate = coordinate else {
+                        group.leave()
+                        return
                     }
-                    .padding()
+                    
+                    APIClient.shared.fetchData(for: [location]) { data in
+                        if var data = data?.first {
+                            data.latitude = coordinate.latitude
+                            data.longitude = coordinate.longitude
+                            cityDataList.append(data)
+                        } else {
+                            print("데이터 로드 실패")
+                        }
+                        group.leave()
+                    }
                 }
-                .onAppear {
-                    fetchData()
-                }
+            }
+            
+            group.notify(queue: .main) {
+                self.seoulCityData = cityDataList
             }
         }
     }
-    
-    private func fetchData() {
-        APIClient.shared.fetchData(for: selectedLocations) { data in
-            if let data = data {
-                DispatchQueue.main.async {
-                    self.seoulCityData = data
-                }
-            } else {
-                print("데이터 로드 실패")
-            }
-        }
-    }
-}
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
-}
