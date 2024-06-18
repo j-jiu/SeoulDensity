@@ -16,7 +16,8 @@ class XMLParserManager: NSObject, XMLParserDelegate {
     private var currentForecastCongestLevel = ""
     private var currentForecastMin = 0
     private var currentForecastMax = 0
-    
+    private var isParsingForecastData = false
+
     func parseXML(xmlData: Data) -> [SeoulCityData]? {
         let parser = XMLParser(data: xmlData)
         parser.delegate = self
@@ -29,8 +30,8 @@ class XMLParserManager: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         currentElement = elementName
         
-        // FCST_PPLTN 태그를 만나면 forecastData 배열 초기화
         if elementName == "FCST_PPLTN" {
+            isParsingForecastData = true
             forecastData = []
         }
     }
@@ -72,7 +73,6 @@ class XMLParserManager: NSObject, XMLParserDelegate {
         switch elementName {
         case "SeoulRtd.citydata_ppltn":
             let cityData = SeoulCityData(
-                
                 areaName: currentAreaName,
                 areaCode: currentAreaCode,
                 areaCongestLevel: currentAreaCongestLevel,
@@ -86,7 +86,6 @@ class XMLParserManager: NSObject, XMLParserDelegate {
                 forecastData: forecastData
             )
             seoulCityData.append(cityData)
-            // 변수 초기화
             resetCurrentValues()
             
         case "FCST_PPLTN":
@@ -97,8 +96,8 @@ class XMLParserManager: NSObject, XMLParserDelegate {
                 forecastPopulationMax: currentForecastMax
             )
             forecastData.append(forecast)
-            // 변수 초기화
             resetForecastValues()
+            isParsingForecastData = false
             
         default:
             break
@@ -122,5 +121,4 @@ class XMLParserManager: NSObject, XMLParserDelegate {
         currentForecastMin = 0
         currentForecastMax = 0
     }
-    
 }

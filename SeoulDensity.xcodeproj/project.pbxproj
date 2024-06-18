@@ -10,6 +10,7 @@
 		BBDA48162C214D6E0084604A /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA48152C214D6E0084604A /* CustomAnnotation.swift */; };
 		BBDA481A2C2156C00084604A /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA48192C2156C00084604A /* LegendView.swift */; };
 		BBDFA5022C21CD38001CCE53 /* GeocodingAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDFA5012C21CD38001CCE53 /* GeocodingAPIClient.swift */; };
+		BBED5EEF2C22078400CBF7D8 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBED5EEE2C22078400CBF7D8 /* LocationDetailView.swift */; };
 		BBEEB3AE2C1D91B5005771C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBEEB3AD2C1D91B5005771C2 /* Assets.xcassets */; };
 		BBEEB3B12C1D91B5005771C2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BBEEB3B02C1D91B5005771C2 /* Base */; };
 		BBEEB3B92C1D92F0005771C2 /* SeoulCityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEEB3B82C1D92F0005771C2 /* SeoulCityData.swift */; };
@@ -24,6 +25,7 @@
 		BBDA48152C214D6E0084604A /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		BBDA48192C2156C00084604A /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
 		BBDFA5012C21CD38001CCE53 /* GeocodingAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingAPIClient.swift; sourceTree = "<group>"; };
+		BBED5EEE2C22078400CBF7D8 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		BBEEB3A12C1D91B4005771C2 /* SeoulDensity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeoulDensity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBEEB3AD2C1D91B5005771C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBEEB3B02C1D91B5005771C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				BBDA48152C214D6E0084604A /* CustomAnnotation.swift */,
 				BBDA48192C2156C00084604A /* LegendView.swift */,
 				BBDFA5012C21CD38001CCE53 /* GeocodingAPIClient.swift */,
+				BBED5EEE2C22078400CBF7D8 /* LocationDetailView.swift */,
 			);
 			path = SeoulDensity;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				BBEEB3C52C1EF935005771C2 /* XMLParserManager.swift in Sources */,
 				BBDA481A2C2156C00084604A /* LegendView.swift in Sources */,
 				BBEEB3BD2C1D9354005771C2 /* APIClient.swift in Sources */,
+				BBED5EEF2C22078400CBF7D8 /* LocationDetailView.swift in Sources */,
 				BBDA48162C214D6E0084604A /* CustomAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

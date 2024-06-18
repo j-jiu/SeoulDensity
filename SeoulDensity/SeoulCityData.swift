@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+
 struct SeoulCityData {
     let areaName: String
     let areaCode: String
@@ -28,10 +29,20 @@ struct SeoulCityData {
     }
     let id = UUID()
     
-    struct ForecastData {
+    struct ForecastData: Hashable, Identifiable {
+        var id = UUID()
         var forecastTime: String
         var forecastCongestLevel: String
         var forecastPopulationMin: Int
         var forecastPopulationMax: Int
+        
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(id)
+        }
+        
+        static func == (lhs: SeoulCityData.ForecastData, rhs: SeoulCityData.ForecastData) -> Bool {
+            return lhs.id == rhs.id
+        }
     }
 }
+

@@ -3,14 +3,35 @@ import MapKit
 
 struct MapView: UIViewRepresentable {
     var seoulCityData: [SeoulCityData]
+    @Binding var selectedAnnotation: CustomAnnotation?
+        
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView(frame: .zero)
         mapView.delegate = context.coordinator
-        return mapView
+        // CustomAnnotation 추가
+                for data in seoulCityData {
+                    let annotation = CustomAnnotation(
+                        coordinate: CLLocationCoordinate2D(latitude: data.latitude, longitude: data.longitude),
+                        title: data.areaName,
+                        subtitle: "인구: \(data.areaPopulationMin) - \(data.areaPopulationMax)",
+                        pinColor: data.pinColor,
+                        seoulCityData: data // CustomAnnotation에 SeoulCityData 전달
+                    )
+                    mapView.addAnnotation(annotation)
+                }
+
+                //초기 지역 서울로 설정
+                let seoulLatitude = 37.5665
+                let seoulLongitude = 126.9780
+                let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: seoulLatitude, longitude: seoulLongitude), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+                mapView.setRegion(region, animated: true)
+
+                return mapView
     }
     
     func updateUIView(_ mapView: MKMapView, context: Context) {
+        
         mapView.removeAnnotations(mapView.annotations)
         
         for data in seoulCityData {
@@ -18,12 +39,13 @@ struct MapView: UIViewRepresentable {
                 coordinate: CLLocationCoordinate2D(latitude: data.latitude, longitude: data.longitude),
                 title: data.areaName,
                 subtitle: "인구: \(data.areaPopulationMin) - \(data.areaPopulationMax)",
-                pinColor: data.pinColor
+                pinColor: data.pinColor,
+                seoulCityData: data
             )
             mapView.addAnnotation(annotation)
         }
         
-        // 서울의 좌표 지정
+        // 서울의 좌표
         let seoulLatitude = 37.5665
         let seoulLongitude = 126.9780
         let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: seoulLatitude, longitude: seoulLongitude), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
@@ -59,7 +81,10 @@ struct MapView: UIViewRepresentable {
             view.markerTintColor = annotation.pinColor
             return view
         }
+        func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+                    if let annotation = view.annotation as? CustomAnnotation {
+                        parent.selectedAnnotation = annotation
+                    }
+                }
     }
 }
-
-
