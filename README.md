@@ -26,10 +26,10 @@
 <img width="200" alt="image" src="https://github.com/j-jiu/SeoulDensity/assets/143875650/809d9641-4631-4307-95e5-aca9648026c8">
 
 메인화면
-<img width="230" alt="image" src="https://github.com/j-jiu/SeoulDensity/assets/143875650/0d214a77-19e5-4969-949b-06217cdd0d44">
+<img width="210" alt="image" src="https://github.com/j-jiu/SeoulDensity/assets/143875650/0d214a77-19e5-4969-949b-06217cdd0d44">
 요악 및 상세보기
 <img width="220" alt="image" src="https://github.com/j-jiu/SeoulDensity/assets/143875650/64ef3c47-7685-416e-8aff-997bd65bf9ee">
-<img width="230" alt="image" src="https://github.com/j-jiu/SeoulDensity/assets/143875650/73686784-01ed-4642-a01c-dfea4da937de">
+<img width="225" alt="image" src="https://github.com/j-jiu/SeoulDensity/assets/143875650/73686784-01ed-4642-a01c-dfea4da937de">
 
 
 	
