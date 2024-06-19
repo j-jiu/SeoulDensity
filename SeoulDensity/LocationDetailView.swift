@@ -1,5 +1,6 @@
 import SwiftUI
 
+//yet : forecast
 struct LocationDetailView: View {
     let annotation: CustomAnnotation
     
