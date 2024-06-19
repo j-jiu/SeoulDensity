@@ -122,3 +122,4 @@ class XMLParserManager: NSObject, XMLParserDelegate {
         currentForecastMax = 0
     }
 }
+
