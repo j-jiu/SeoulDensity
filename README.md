@@ -28,8 +28,8 @@
 메인화면
 <img width="230" alt="image" src="https://github.com/j-jiu/SeoulDensity/assets/143875650/0d214a77-19e5-4969-949b-06217cdd0d44">
 요악 및 상세보기
-<img width="230" alt="image" src="https://github.com/j-jiu/SeoulDensity/assets/143875650/64ef3c47-7685-416e-8aff-997bd65bf9ee">
-<img width="240" alt="image" src="https://github.com/j-jiu/SeoulDensity/assets/143875650/73686784-01ed-4642-a01c-dfea4da937de">
+<img width="220" alt="image" src="https://github.com/j-jiu/SeoulDensity/assets/143875650/64ef3c47-7685-416e-8aff-997bd65bf9ee">
+<img width="220" alt="image" src="https://github.com/j-jiu/SeoulDensity/assets/143875650/73686784-01ed-4642-a01c-dfea4da937de">
 
 
 	
