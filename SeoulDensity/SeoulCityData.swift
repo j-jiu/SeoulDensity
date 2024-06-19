@@ -1,6 +1,6 @@
 import Foundation
 import UIKit
-
+//final
 struct SeoulCityData {
     let areaName: String
     let areaCode: String
