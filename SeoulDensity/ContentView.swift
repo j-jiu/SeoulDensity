@@ -1,6 +1,6 @@
 import SwiftUI
 import MapKit
-//최종
+
 struct ContentView: View {
     @State private var seoulCityData: [SeoulCityData] = []
     @State private var selectedLocations: [String] = [
