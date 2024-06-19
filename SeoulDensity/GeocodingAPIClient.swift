@@ -3,7 +3,7 @@
 //  SeoulDensity
 //
 //  Created by 장지우 on 6/18/24.
-//
+// 6/19modified
 
 import Foundation
 import CoreLocation
