@@ -8,11 +8,12 @@
 
 ## 1. 프로젝트 구조
 <img width="1335" alt="image" src="https://github.com/j-jiu/SeoulDensity/assets/143875650/7ac8614c-f784-4978-ae60-2ccc9dc4c2cd">
+
 #### Geocoding API  
 	-요청: 지역명
  	-응답: 위도, 경도 등
   
-#### 서울 열린 데이터 광장
+#### 서울 열린 데이터 광장 API
 	-요청: 지역명
  	-응답: 실시간 혼잡도, 인구 수 등
 
